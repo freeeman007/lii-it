@@ -1005,3 +1005,20 @@ html, body {
     max-width: 100%;
     overflow-x: clip;
 }
+/* ============================================================
+   21. ВОЗВРАЩАЕМ МЕНЮ В ШАПКУ НА ДЕСКТОПЕ
+   (т.к. .nav теперь вне .header в HTML)
+   ============================================================ */
+
+@media (min-width: 993px) {
+    .nav {
+        position: static;      /* возвращаем в обычный поток */
+        transform: none;
+        display: flex;         /* выравниваем по центру шапки */
+        align-items: center;
+        padding: 0;
+        background: transparent;
+        overflow: visible;
+        z-index: auto;
+    }
+}
