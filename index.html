@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lii-iT — Системный администратор | Надёжно, как должно быть</title>
-	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-	<link rel="apple-touch-icon" href="img/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="apple-touch-icon" href="img/favicon.svg">
     <meta name="description" content="Системный администратор для бизнеса. Удалённо по всей России, очно в Санкт-Петербурге и Екатеринбурге. Серверы, сети, безопасность, поддержка.">
-   
-   <!-- Open Graph -->
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Lii-iT — Системный администратор для бизнеса">
-	<meta property="og:description" content="Удалённо по всей России. Очно в Санкт-Петербурге и Екатеринбурге. Серверы, сети, безопасность, поддержка.">
-	<meta property="og:image" content="https://lii-it.ru/img/og-image.png">
-	<meta property="og:url" content="https://lii-it.ru/">
 
-	<!-- Twitter Card -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Lii-iT — Системный администратор для бизнеса">
-	<meta name="twitter:description" content="Удалённо по всей России. Очно в Санкт-Петербурге и Екатеринбурге.">
-	<meta name="twitter:image" content="https://lii-it.ru/img/og-image.png">
-	
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lii-iT — Системный администратор для бизнеса">
+    <meta property="og:description" content="Удалённо по всей России. Очно в Санкт-Петербурге и Екатеринбурге. Серверы, сети, безопасность, поддержка.">
+    <meta property="og:image" content="https://lii-it.ru/img/og-image.png">
+    <meta property="og:url" content="https://lii-it.ru/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lii-iT — Системный администратор для бизнеса">
+    <meta name="twitter:description" content="Удалённо по всей России. Очно в Санкт-Петербурге и Екатеринбурге.">
+    <meta name="twitter:image" content="https://lii-it.ru/img/og-image.png">
+
     <!-- Шрифт Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Стили (подключим на шаге 2) -->
+
+    <!-- Стили -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -39,16 +39,6 @@
             <a href="#" class="logo">
                 <span class="logo__text">Lii-iT</span>
             </a>
-
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li><a href="#services" data-ru="Услуги" data-en="Services">Услуги</a></li>
-                    <li><a href="#about" data-ru="Обо мне" data-en="About">Обо мне</a></li>
-                    <li><a href="#process" data-ru="Как работаю" data-en="Process">Как работаю</a></li>
-                    <li><a href="#benefits" data-ru="Преимущества" data-en="Benefits">Преимущества</a></li>
-                    <li><a href="#contacts" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
-                </ul>
-            </nav>
 
             <div class="header__actions">
                 <button class="lang-switch" id="langSwitch" type="button" title="Сменить язык">
@@ -65,6 +55,16 @@
         </div>
     </header>
 
+	<!-- Меню вынесено отдельно (см. ниже, после </header>) -->
+    <nav class="nav" id="nav">
+    	<ul class="nav__list">
+            <li><a href="#services" data-ru="Услуги" data-en="Services">Услуги</a></li>
+            <li><a href="#about" data-ru="Обо мне" data-en="About">Обо мне</a></li>
+            <li><a href="#process" data-ru="Как работаю" data-en="Process">Как работаю</a></li>
+            <li><a href="#benefits" data-ru="Преимущества" data-en="Benefits">Преимущества</a></li>
+        	<li><a href="#contacts" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+        </ul>
+    </nav>
     <!-- ============================================
          2. HERO
     ============================================= -->
@@ -75,20 +75,20 @@
                 <span data-ru="Свободен для новых проектов" data-en="Available for new projects">Свободен для новых проектов</span>
             </div>
 
-            <h1 class="hero__title" 
-                data-ru="Системный администратор для бизнеса" 
+            <h1 class="hero__title"
+                data-ru="Системный администратор для бизнеса"
                 data-en="Systems Administrator for Business">
                 Системный администратор для бизнеса
             </h1>
 
-            <p class="hero__slogan" 
-               data-ru="Надёжно, как должно быть" 
+            <p class="hero__slogan"
+               data-ru="Надёжно, как должно быть"
                data-en="Reliable, as it should be">
                 Надёжно, как должно быть
             </p>
 
-            <p class="hero__subtitle" 
-               data-ru="Удалённо по всей России · Очно в Санкт-Петербурге и Екатеринбурге" 
+            <p class="hero__subtitle"
+               data-ru="Удалённо по всей России · Очно в Санкт-Петербурге и Екатеринбурге"
                data-en="Remote across Russia · On-site in Saint Petersburg and Yekaterinburg">
                 Удалённо по всей России · Очно в Санкт-Петербурге и Екатеринбурге
             </p>
@@ -109,11 +109,11 @@
 
             <div class="about__content">
                 <div class="about__text">
-                    <p data-ru="Меня зовут Ильнур — я системный администратор с опытом работы 15 лет. Я помогаю бизнесу содержать IT-инфраструктуру в порядке: серверы, сети, рабочие места, безопасность и резервное копирование." 
+                    <p data-ru="Меня зовут Ильнур — я системный администратор с опытом работы 15 лет. Я помогаю бизнесу содержать IT-инфраструктуру в порядке: серверы, сети, рабочие места, безопасность и резервное копирование."
                        data-en="My name is Ilnur — I am a systems administrator with 15 years of experience. I help businesses keep their IT infrastructure in order: servers, networks, workstations, security and backups.">
                         Меня зовут Ильнур — я системный администратор с опытом работы 15 лет. Я помогаю бизнесу содержать IT-инфраструктуру в порядке: серверы, сети, рабочие места, безопасность и резервное копирование.
                     </p>
-                    <p data-ru="Работаю с компаниями любого размера — от небольшого офиса до распределённой инфраструктуры. Ценю порядок, документацию и предсказуемость. Если что-то можно автоматизировать или упростить — я это сделаю." 
+                    <p data-ru="Работаю с компаниями любого размера — от небольшого офиса до распределённой инфраструктуры. Ценю порядок, документацию и предсказуемость. Если что-то можно автоматизировать или упростить — я это сделаю."
                        data-en="I work with companies of any size — from a small office to distributed infrastructure. I value order, documentation and predictability. If something can be automated or simplified — I will do it.">
                         Работаю с компаниями любого размера — от небольшого офиса до распределённой инфраструктуры. Ценю порядок, документацию и предсказуемость. Если что-то можно автоматизировать или упростить — я это сделаю.
                     </p>
@@ -147,8 +147,8 @@
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title" data-ru="Услуги" data-en="Services">Услуги</h2>
-            <p class="section-subtitle" 
-               data-ru="Полный спектр работ по IT-инфраструктуре. Нажмите на категорию, чтобы раскрыть список." 
+            <p class="section-subtitle"
+               data-ru="Полный спектр работ по IT-инфраструктуре. Нажмите на категорию, чтобы раскрыть список."
                data-en="Full range of IT infrastructure services. Click a category to expand.">
                 Полный спектр работ по IT-инфраструктуре. Нажмите на категорию, чтобы раскрыть список.
             </p>
@@ -368,8 +368,8 @@
     <section class="pricing" id="pricing">
         <div class="container">
             <h2 class="section-title" data-ru="Цены" data-en="Pricing">Цены</h2>
-            <p class="section-subtitle" 
-               data-ru="Точную стоимость назову после обсуждения задачи. Ниже — ориентиры." 
+            <p class="section-subtitle"
+               data-ru="Точную стоимость назову после обсуждения задачи. Ниже — ориентиры."
                data-en="Exact price after we discuss the task. Below are rough guidelines.">
                 Точную стоимость назову после обсуждения задачи. Ниже — ориентиры.
             </p>
@@ -414,8 +414,8 @@
         <div class="container">
             <h2 class="section-title" data-ru="Контакты" data-en="Contacts">Контакты</h2>
 
-            <p class="contacts__text" 
-               data-ru="Опишите задачу удобным способом — отвечу в течение часа в рабочее время." 
+            <p class="contacts__text"
+               data-ru="Опишите задачу удобным способом — отвечу в течение часа в рабочее время."
                data-en="Describe your task in any convenient way — I will reply within an hour during business hours.">
                 Опишите задачу удобным способом — отвечу в течение часа в рабочее время.
             </p>
@@ -455,8 +455,8 @@
     <footer class="footer">
         <div class="container footer__inner">
             <p class="footer__brand">Lii-iT</p>
-            <p class="footer__slogan" 
-               data-ru="Надёжно, как должно быть" 
+            <p class="footer__slogan"
+               data-ru="Надёжно, как должно быть"
                data-en="Reliable, as it should be">
                 Надёжно, как должно быть
             </p>
@@ -464,14 +464,13 @@
         </div>
     </footer>
 
-	<!-- Кнопка «Наверх» -->
-	<button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">
-		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-			<path d="M12 19V5M5 12l7-7 7 7"/>
-		</svg>
-	</button>
+    <!-- Кнопка «Наверх» -->
+    <button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
 
-    <!-- Скрипт (подключим на шаге 3) -->
     <script src="js/script.js"></script>
 </body>
 </html>
