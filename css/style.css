@@ -27,7 +27,7 @@ body.theme-dark {
     --accent:          #3b82f6;
     --accent-hover:    #2563eb;
     --accent-soft:     rgba(59, 130, 246, 0.12);
-    --header-bg:       rgba(15, 23, 42, 0.85);
+    --header-bg:       rgba(15, 23, 42, 0.95);
     --text:            #e2e8f0;
     --text-muted:      #94a3b8;
     --shadow:          0 20px 40px -20px rgba(0, 0, 0, 0.5);
@@ -43,7 +43,7 @@ body.theme-light {
     --accent:          #2563eb;
     --accent-hover:    #1d4ed8;
     --accent-soft:     rgba(37, 99, 235, 0.10);
-    --header-bg:       rgba(241, 245, 249, 0.85);
+    --header-bg:       rgba(241, 245, 249, 0.95);
     --text:            #0f172a;
     --text-muted:      #64748b;
     --shadow:          0 4px 16px -4px rgba(15, 23, 42, 0.08);
@@ -89,14 +89,12 @@ ul, ol {
     list-style: none;
 }
 
-/* ----- Контейнер ----- */
 .container {
     max-width: var(--container);
     margin: 0 auto;
     padding: 0 24px;
 }
 
-/* ----- Заголовки секций ----- */
 .section-title {
     font-size: clamp(28px, 4vw, 40px);
     font-weight: 700;
@@ -115,7 +113,6 @@ section {
     padding: 100px 0;
 }
 
-/* Чередование фона у секций */
 .about,
 .process,
 .contacts {
@@ -176,8 +173,8 @@ section {
     right: 0;
     z-index: 100;
     background: var(--header-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    /* backdrop-filter убран специально, чтобы не ломать
+       position: fixed у мобильного меню */
     border-bottom: 1px solid var(--border);
     transition: background var(--transition);
 }
@@ -474,7 +471,6 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 28px;
-    counter-reset: step;
 }
 
 .process__step {
@@ -482,6 +478,7 @@ section {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 28px;
+    box-shadow: var(--shadow);
     transition: border-color var(--transition), transform var(--transition);
 }
 
@@ -702,7 +699,7 @@ section {
 }
 
 /* ============================================================
-   13. ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ И БУРГЕР
+   12. ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ И БУРГЕР
    ============================================================ */
 
 .theme-switch {
@@ -776,10 +773,9 @@ body.no-scroll {
 }
 
 /* ============================================================
-   12 + 14. АДАПТИВНОСТЬ И МОБИЛЬНОЕ МЕНЮ
+   13. АДАПТИВНОСТЬ И МОБИЛЬНОЕ МЕНЮ
    ============================================================ */
 
-/* Планшеты и мобильные */
 @media (max-width: 992px) {
     .about__content {
         grid-template-columns: 1fr;
@@ -825,9 +821,7 @@ body.no-scroll {
     }
 }
 
-/* Мобильные */
 @media (max-width: 768px) {
-    /* Переопределяем высоту шапки для всех, кто её использует */
     :root {
         --header-h: 64px;
     }
@@ -886,7 +880,7 @@ body.no-scroll {
 }
 
 /* ============================================================
-   15. ПЛАВНАЯ СМЕНА ТЕМЫ
+   14. ПЛАВНАЯ СМЕНА ТЕМЫ
    ============================================================ */
 
 .header,
@@ -905,7 +899,7 @@ body.no-scroll {
 }
 
 /* ============================================================
-   16. ШАПКА В СВЕТЛОЙ ТЕМЕ
+   15. ШАПКА В СВЕТЛОЙ ТЕМЕ
    ============================================================ */
 
 body.theme-light .header {
@@ -918,7 +912,7 @@ body.theme-dark .header {
 }
 
 /* ============================================================
-   17. АКТИВНАЯ ССЫЛКА В МЕНЮ
+   16. АКТИВНАЯ ССЫЛКА В МЕНЮ
    ============================================================ */
 
 .nav__list a.is-active {
@@ -938,7 +932,7 @@ body.theme-dark .header {
 }
 
 /* ============================================================
-   18. ПЛАВНОЕ ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ
+   17. ПЛАВНОЕ ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ
    ============================================================ */
 
 .reveal {
@@ -961,7 +955,7 @@ body.theme-dark .header {
 }
 
 /* ============================================================
-   19. КНОПКА «НАВЕРХ»
+   18. КНОПКА «НАВЕРХ»
    ============================================================ */
 
 .scroll-top {
@@ -998,27 +992,10 @@ body.theme-dark .header {
 }
 
 /* ============================================================
-   20. ЗАЩИТА ОТ ГОРИЗОНТАЛЬНОГО СКРОЛЛА
+   19. ЗАЩИТА ОТ ГОРИЗОНТАЛЬНОГО СКРОЛЛА
    ============================================================ */
 
 html, body {
     max-width: 100%;
     overflow-x: clip;
-}
-/* ============================================================
-   21. ВОЗВРАЩАЕМ МЕНЮ В ШАПКУ НА ДЕСКТОПЕ
-   (т.к. .nav теперь вне .header в HTML)
-   ============================================================ */
-
-@media (min-width: 993px) {
-    .nav {
-        position: static;      /* возвращаем в обычный поток */
-        transform: none;
-        display: flex;         /* выравниваем по центру шапки */
-        align-items: center;
-        padding: 0;
-        background: transparent;
-        overflow: visible;
-        z-index: auto;
-    }
 }
