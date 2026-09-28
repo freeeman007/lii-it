@@ -823,7 +823,12 @@ body.no-scroll {
    ============================================================ */
 
 @media (max-width: 992px) {
-    .burger {
+     .about__content {
+     	grid-template-columns: 1fr;   /* одна колонка */
+     	gap: 32px;
+    }
+	
+	.burger {
         display: block;
     }
 
@@ -863,6 +868,24 @@ body.no-scroll {
 @media (max-width: 768px) {
     .nav {
         top: 64px;
+    }
+
+	.container {
+        padding: 0 16px;   /* уменьшаем боковой отступ */
+    }
+
+    .about__facts {
+        padding: 20px;     /* уменьшаем внутренние отступы */
+    }
+
+    .about__facts li {
+        font-size: 14px;   /* чтобы длинные строки переносились лучше */
+        word-break: break-word;
+    }
+
+    .about__facts span {
+        word-break: break-word;
+        overflow-wrap: anywhere;
     }
 }
 
@@ -987,4 +1010,13 @@ body.theme-dark .header {
         width: 44px;
         height: 44px;
     }
+}
+
+/* ============================================================
+   20. ЗАЩИТА ОТ ГОРИЗОНТАЛЬНОГО СКРОЛЛА
+   ============================================================ */
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
 }
