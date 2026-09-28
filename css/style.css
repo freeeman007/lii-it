@@ -15,6 +15,7 @@
     --transition:      0.2s ease;
     --font:            'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --success:         #22c55e;
+	--header-h:		   72px;
 }
 
 /* ----- ТЁМНАЯ ТЕМА (по умолчанию) ----- */
@@ -186,7 +187,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 72px;
+    height: var(--header-h);
     gap: 24px;
 }
 
@@ -834,10 +835,11 @@ body.no-scroll {
 
     .nav {
         position: fixed;
-        top: 72px;              /* десктопная высота шапки */
+        top: var(--header-h);             /* десктопная высота шапки */
         left: 0;
         right: 0;
         bottom: 0;
+		z-index: 99;
         background: var(--bg);
         padding: 24px;
         transform: translateX(-100%);
@@ -1018,6 +1020,6 @@ body.theme-dark .header {
    ============================================================ */
 
 html, body {
-    overflow-x: hidden;
     max-width: 100%;
+	overflow-x: clip;   /* вместо hidden — clip не создаёт скролл-контекст */
 }
