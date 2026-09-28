@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lii-iT — Системный администратор | Надёжно, как должно быть</title>
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+	<link rel="apple-touch-icon" href="img/favicon.svg">
+    <meta name="description" content="Системный администратор для бизнеса. Удалённо по всей России, очно в Санкт-Петербурге и Екатеринбурге. Серверы, сети, безопасность, поддержка.">
+   
+   <!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Lii-iT — Системный администратор для бизнеса">
+	<meta property="og:description" content="Удалённо по всей России. Очно в СПб и Екатеринбурге. Серверы, сети, безопасность, поддержка.">
+	<meta property="og:image" content="img/og-image.svg">
+	<meta property="og:url" content="https://lii-it.ru/">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Lii-iT — Системный администратор для бизнеса">
+	<meta name="twitter:description" content="Удалённо по всей России. Очно в СПб и Екатеринбурге.">
+	<meta name="twitter:image" content="img/og-image.svg">
+	
+    <!-- Шрифт Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Стили (подключим на шаге 2) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ============================================
+         1. HEADER
+    ============================================= -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="#" class="logo">
+                <span class="logo__text">Lii-iT</span>
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#services" data-ru="Услуги" data-en="Services">Услуги</a></li>
+                    <li><a href="#about" data-ru="Обо мне" data-en="About">Обо мне</a></li>
+                    <li><a href="#process" data-ru="Как работаю" data-en="Process">Как работаю</a></li>
+                    <li><a href="#benefits" data-ru="Преимущества" data-en="Benefits">Преимущества</a></li>
+                    <li><a href="#contacts" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <button class="lang-switch" id="langSwitch" type="button" title="Сменить язык">
+                    <span class="lang-switch__current">RU</span>
+                </button>
+                <button class="theme-switch" id="themeSwitch" type="button" title="Сменить тему">A</button>
+                <a href="#contacts" class="btn btn--primary" data-ru="Связаться" data-en="Contact me">Связаться</a>
+                <button class="burger" id="burger" type="button" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         2. HERO
+    ============================================= -->
+    <section class="hero">
+        <div class="container hero__inner">
+            <div class="hero__status">
+                <span class="status-dot"></span>
+                <span data-ru="Свободен для новых проектов" data-en="Available for new projects">Свободен для новых проектов</span>
+            </div>
+
+            <h1 class="hero__title" 
+                data-ru="Системный администратор для бизнеса" 
+                data-en="Systems Administrator for Business">
+                Системный администратор для бизнеса
+            </h1>
+
+            <p class="hero__slogan" 
+               data-ru="Надёжно, как должно быть" 
+               data-en="Reliable, as it should be">
+                Надёжно, как должно быть
+            </p>
+
+            <p class="hero__subtitle" 
+               data-ru="Удалённо по всей России · Очно в Санкт-Петербурге и Екатеринбурге" 
+               data-en="Remote across Russia · On-site in Saint Petersburg and Yekaterinburg">
+                Удалённо по всей России · Очно в Санкт-Петербурге и Екатеринбурге
+            </p>
+
+            <div class="hero__buttons">
+                <a href="#services" class="btn btn--primary" data-ru="Мои услуги" data-en="My services">Мои услуги</a>
+                <a href="#contacts" class="btn btn--outline" data-ru="Связаться" data-en="Contact me">Связаться</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         3. ОБО МНЕ
+    ============================================= -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title" data-ru="Обо мне" data-en="About me">Обо мне</h2>
+
+            <div class="about__content">
+                <div class="about__text">
+                    <p data-ru="Меня зовут Ильнур — я системный администратор с опытом работы 15 Я помогаю бизнесу содержать IT-инфраструктуру в порядке: серверы, сети, рабочие места, безопасность и резервное копирование." 
+                       data-en="My name is Ilnur — I am a systems administrator with 15 years of experience. I help businesses keep their IT infrastructure in order: servers, networks, workstations, security and backups.">
+                        Меня зовут Ильнур — я системный администратор с опытом работы 15 Я помогаю бизнесу содержать IT-инфраструктуру в порядке: серверы, сети, рабочие места, безопасность и резервное копирование.
+                    </p>
+                    <p data-ru="Работаю с компаниями любого размера — от небольшого офиса до распределённой инфраструктуры. Ценю порядок, документацию и предсказуемость. Если что-то можно автоматизировать или упростить — я это сделаю." 
+                       data-en="I work with companies of any size — from a small office to distributed infrastructure. I value order, documentation and predictability. If something can be automated or simplified — I will do it.">
+                        Работаю с компаниями любого размера — от небольшого офиса до распределённой инфраструктуры. Ценю порядок, документацию и предсказуемость. Если что-то можно автоматизировать или упростить — я это сделаю.
+                    </p>
+                </div>
+
+                <ul class="about__facts">
+                    <li>
+                        <strong data-ru="Опыт:" data-en="Experience:">Опыт:</strong>
+                        <span data-ru="15 лет в IT" data-en="... years in IT">15 лет в IT</span>
+                    </li>
+                    <li>
+                        <strong data-ru="Специализация:" data-en="Specialization:">Специализация:</strong>
+                        <span data-ru="Linux, Windows Server, сети, безопасность" data-en="Linux, Windows Server, networks, security">Linux, Windows Server, сети, безопасность</span>
+                    </li>
+                    <li>
+                        <strong data-ru="География:" data-en="Geography:">География:</strong>
+                        <span data-ru="удалённо по России, очно — СПб и ЕКБ" data-en="remote across Russia, on-site — SPb and EKB">удалённо по России, очно — СПб и ЕКБ</span>
+                    </li>
+                    <li>
+                        <strong data-ru="Формат работы:" data-en="Work format:">Формат работы:</strong>
+                        <span data-ru="разовые задачи и абонентское обслуживание" data-en="one-time tasks and retainer support">разовые задачи и абонентское обслуживание</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         4. УСЛУГИ (аккордеон)
+    ============================================= -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title" data-ru="Услуги" data-en="Services">Услуги</h2>
+            <p class="section-subtitle" 
+               data-ru="Полный спектр работ по IT-инфраструктуре. Нажмите на категорию, чтобы раскрыть список." 
+               data-en="Full range of IT infrastructure services. Click a category to expand.">
+                Полный спектр работ по IT-инфраструктуре. Нажмите на категорию, чтобы раскрыть список.
+            </p>
+
+            <div class="accordion">
+
+                <!-- 1 -->
+                <div class="accordion__item">
+                    <button class="accordion__header" type="button">
+                        <span data-ru="Поддержка серверов и инфраструктуры" data-en="Server & Infrastructure Support">Поддержка серверов и инфраструктуры</span>
+                        <span class="accordion__icon">+</span>
+                    </button>
+                    <div class="accordion__body">
+                        <ul>
+                            <li data-ru="Установка и настройка Windows Server / Linux (Ubuntu, Debian, CentOS)" data-en="Installation and configuration of Windows Server / Linux (Ubuntu, Debian, CentOS)">Установка и настройка Windows Server / Linux (Ubuntu, Debian, CentOS)</li>
+                            <li data-ru="Настройка ролей: AD, DNS, DHCP, файловые серверы, RDS" data-en="Role configuration: AD, DNS, DHCP, file servers, RDS">Настройка ролей: AD, DNS, DHCP, файловые серверы, RDS</li>
+                            <li data-ru="Настройка веб-серверов: Nginx, Apache, IIS" data-en="Web server setup: Nginx, Apache, IIS">Настройка веб-серверов: Nginx, Apache, IIS</li>
+                            <li data-ru="Настройка СУБД: MySQL/MariaDB, PostgreSQL, MS SQL" data-en="Database setup: MySQL/MariaDB, PostgreSQL, MS SQL">Настройка СУБД: MySQL/MariaDB, PostgreSQL, MS SQL</li>
+                            <li data-ru="Виртуализация: VMware, Proxmox, Hyper-V, KVM" data-en="Virtualization: VMware, Proxmox, Hyper-V, KVM">Виртуализация: VMware, Proxmox, Hyper-V, KVM</li>
+                            <li data-ru="Контейнеризация: Docker, Docker Compose, базово Kubernetes" data-en="Containerization: Docker, Docker Compose, basic Kubernetes">Контейнеризация: Docker, Docker Compose, базово Kubernetes</li>
+                            <li data-ru="Микросервисы и оркестрация" data-en="Microservices and orchestration">Микросервисы и оркестрация</li>
+                            <li data-ru="Резервное копирование серверов и данных (Veeam, rsync, bacula)" data-en="Server and data backup (Veeam, rsync, bacula)">Резервное копирование серверов и данных (Veeam, rsync, bacula)</li>
+                            <li data-ru="Мониторинг серверов (Zabbix, Prometheus, Grafana, Nagios)" data-en="Server monitoring (Zabbix, Prometheus, Grafana, Nagios)">Мониторинг серверов (Zabbix, Prometheus, Grafana, Nagios)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="accordion__item">
+                    <button class="accordion__header" type="button">
+                        <span data-ru="Сетевая инфраструктура" data-en="Network Infrastructure">Сетевая инфраструктура</span>
+                        <span class="accordion__icon">+</span>
+                    </button>
+                    <div class="accordion__body">
+                        <ul>
+                            <li data-ru="Настройка маршрутизаторов, коммутаторов, VLAN" data-en="Configuration of routers, switches, VLANs">Настройка маршрутизаторов, коммутаторов, VLAN</li>
+                            <li data-ru="Настройка VPN: OpenVPN, WireGuard, IPsec" data-en="VPN setup: OpenVPN, WireGuard, IPsec">Настройка VPN: OpenVPN, WireGuard, IPsec</li>
+                            <li data-ru="Настройка firewall: iptables, nftables, pfSense, MikroTik" data-en="Firewall setup: iptables, nftables, pfSense, MikroTik">Настройка firewall: iptables, nftables, pfSense, MikroTik</li>
+                            <li data-ru="Прокси-серверы и балансировка нагрузки" data-en="Proxy servers and load balancing">Прокси-серверы и балансировка нагрузки</li>
+                            <li data-ru="Wi-Fi сети: настройка точек доступа, контроллеров" data-en="Wi-Fi networks: access points and controllers setup">Wi-Fi сети: настройка точек доступа, контроллеров</li>
+                            <li data-ru="Диагностика сетевых проблем" data-en="Network troubleshooting">Диагностика сетевых проблем</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="accordion__item">
+                    <button class="accordion__header" type="button">
+                        <span data-ru="Офисная и корпоративная инфраструктура" data-en="Office & Corporate Infrastructure">Офисная и корпоративная инфраструктура</span>
+                        <span class="accordion__icon">+</span>
+                    </button>
+                    <div class="accordion__body">
+                        <ul>
+                            <li data-ru="Настройка рабочих мест (Windows, macOS, Linux)" data-en="Workstation setup (Windows, macOS, Linux)">Настройка рабочих мест (Windows, macOS, Linux)</li>
+                            <li data-ru="Настройка Active Directory, групповые политики" data-en="Active Directory and Group Policy setup">Настройка Active Directory, групповые политики</li>
+                            <li data-ru="Файловые хранилища (NAS, Samba, Nextcloud)" data-en="File storages (NAS, Samba, Nextcloud)">Файловые хранилища (NAS, Samba, Nextcloud)</li>
+                            <li data-ru="Почтовые серверы (Exchange, Postfix, Mailcow)" data-en="Mail servers (Exchange, Postfix, Mailcow)">Почтовые серверы (Exchange, Postfix, Mailcow)</li>
+                            <li data-ru="Корпоративные мессенджеры и совместная работа" data-en="Corporate messengers and collaboration tools">Корпоративные мессенджеры и совместная работа</li>
+                            <li data-ru="Принт-серверы, сканеры, периферия" data-en="Print servers, scanners, peripherals">Принт-серверы, сканеры, периферия</li>
+                            <li data-ru="1С-серверы и сопровождение" data-en="1C servers and support">1С-серверы и сопровождение</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="accordion__item">
+                    <button class="accordion__header" type="button">
+                        <span data-ru="Безопасность" data-en="Security">Безопасность</span>
+                        <span class="accordion__icon">+</span>
+                    </button>
+                    <div class="accordion__body">
+                        <ul>
+                            <li data-ru="Настройка антивирусной защиты" data-en="Antivirus protection setup">Настройка антивирусной защиты</li>
+                            <li data-ru="Аудит безопасности и закрытие уязвимостей" data-en="Security audit and vulnerability remediation">Аудит безопасности и закрытие уязвимостей</li>
+                            <li data-ru="Настройка прав доступа и политик" data-en="Access rights and policy configuration">Настройка прав доступа и политик</li>
+                            <li data-ru="Шифрование данных и каналов связи" data-en="Data and communication channel encryption">Шифрование данных и каналов связи</li>
+                            <li data-ru="Защита от DDoS, fail2ban, базовая IDS/IPS" data-en="DDoS protection, fail2ban, basic IDS/IPS">Защита от DDoS, fail2ban, базовая IDS/IPS</li>
+                            <li data-ru="Резервное копирование с проверкой восстановления" data-en="Backup with recovery verification">Резервное копирование с проверкой восстановления</li>
+                            <li data-ru="Соответствие требованиям (152-ФЗ и т.п.)" data-en="Compliance (152-FZ, etc.)">Соответствие требованиям (152-ФЗ и т.п.)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="accordion__item">
+                    <button class="accordion__header" type="button">
+                        <span data-ru="Облака и хостинг" data-en="Cloud & Hosting">Облака и хостинг</span>
+                        <span class="accordion__icon">+</span>
+                    </button>
+                    <div class="accordion__body">
+                        <ul>
+                            <li data-ru="Развёртывание и сопровождение VPS/VDS" data-en="VPS/VDS deployment and maintenance">Развёртывание и сопровождение VPS/VDS</li>
+                            <li data-ru="Настройка облачных сервисов (Yandex Cloud, Selectel, AWS и т.п.)" data-en="Cloud services setup (Yandex Cloud, Selectel, AWS, etc.)">Настройка облачных сервисов (Yandex Cloud, Selectel, AWS и т.п.)</li>
+                            <li data-ru="Миграция инфраструктуры в облако и обратно" data-en="Infrastructure migration to/from cloud">Миграция инфраструктуры в облако и обратно</li>
+                            <li data-ru="Домены, DNS, SSL-сертификаты (Let's Encrypt)" data-en="Domains, DNS, SSL certificates (Let's Encrypt)">Домены, DNS, SSL-сертификаты (Let's Encrypt)</li>
+                            <li data-ru="Панели управления: ISPmanager, Plesk, cPanel" data-en="Control panels: ISPmanager, Plesk, cPanel">Панели управления: ISPmanager, Plesk, cPanel</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="accordion__item">
+                    <button class="accordion__header" type="button">
+                        <span data-ru="Поддержка пользователей и сервис" data-en="User Support & Service">Поддержка пользователей и сервис</span>
+                        <span class="accordion__icon">+</span>
+                    </button>
+                    <div class="accordion__body">
+                        <ul>
+                            <li data-ru="Удалённая и выездная поддержка" data-en="Remote and on-site support">Удалённая и выездная поддержка</li>
+                            <li data-ru="Helpdesk / техподдержка пользователей" data-en="Helpdesk / user technical support">Helpdesk / техподдержка пользователей</li>
+                            <li data-ru="Консультации по IT-инфраструктуре" data-en="IT infrastructure consulting">Консультации по IT-инфраструктуре</li>
+                            <li data-ru="Обучение сотрудников базовой безопасности" data-en="Employee basic security training">Обучение сотрудников базовой безопасности</li>
+                            <li data-ru="Ведение документации и инструкций" data-en="Documentation and instructions maintenance">Ведение документации и инструкций</li>
+                            <li data-ru="SLA-обслуживание (абонентское)" data-en="SLA-based retainer support">SLA-обслуживание (абонентское)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="accordion__item">
+                    <button class="accordion__header" type="button">
+                        <span data-ru="Дополнительно" data-en="Additional Services">Дополнительно</span>
+                        <span class="accordion__icon">+</span>
+                    </button>
+                    <div class="accordion__body">
+                        <ul>
+                            <li data-ru="Настройка IP-телефонии (Asterisk, FreePBX)" data-en="IP telephony setup (Asterisk, FreePBX)">Настройка IP-телефонии (Asterisk, FreePBX)</li>
+                            <li data-ru="Настройка видеонаблюдения" data-en="Video surveillance setup">Настройка видеонаблюдения</li>
+                            <li data-ru="Восстановление данных после сбоев" data-en="Data recovery after failures">Восстановление данных после сбоев</li>
+                            <li data-ru="Аудит и оптимизация существующей инфраструктуры" data-en="Audit and optimization of existing infrastructure">Аудит и оптимизация существующей инфраструктуры</li>
+                            <li data-ru="Разовый выезд / разовая консультация" data-en="One-time visit / consultation">Разовый выезд / разовая консультация</li>
+                            <li data-ru="Аутсорсинг IT-отдела «под ключ»" data-en="Turnkey IT department outsourcing">Аутсорсинг IT-отдела «под ключ»</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         5. КАК Я РАБОТАЮ
+    ============================================= -->
+    <section class="process" id="process">
+        <div class="container">
+            <h2 class="section-title" data-ru="Как я работаю" data-en="How I work">Как я работаю</h2>
+
+            <ol class="process__steps">
+                <li class="process__step">
+                    <span class="process__number">01</span>
+                    <h3 data-ru="Заявка" data-en="Request">Заявка</h3>
+                    <p data-ru="Вы описываете задачу по телефону, в Telegram или на email." data-en="You describe the task via phone, Telegram or email.">Вы описываете задачу по телефону, в Telegram или на email.</p>
+                </li>
+                <li class="process__step">
+                    <span class="process__number">02</span>
+                    <h3 data-ru="Диагностика" data-en="Diagnostics">Диагностика</h3>
+                    <p data-ru="Обсуждаем детали, при необходимости провожу аудит текущей инфраструктуры." data-en="We discuss details; if needed, I audit the current infrastructure.">Обсуждаем детали, при необходимости провожу аудит текущей инфраструктуры.</p>
+                </li>
+                <li class="process__step">
+                    <span class="process__number">03</span>
+                    <h3 data-ru="Предложение" data-en="Proposal">Предложение</h3>
+                    <p data-ru="Даю понятную смету, сроки и план работ." data-en="I provide a clear estimate, timeline and work plan.">Даю понятную смету, сроки и план работ.</p>
+                </li>
+                <li class="process__step">
+                    <span class="process__number">04</span>
+                    <h3 data-ru="Работа" data-en="Work">Работа</h3>
+                    <p data-ru="Выполняю задачи, держу в курсе, фиксирую результат." data-en="I perform the tasks, keep you updated, document the result.">Выполняю задачи, держу в курсе, фиксирую результат.</p>
+                </li>
+                <li class="process__step">
+                    <span class="process__number">05</span>
+                    <h3 data-ru="Поддержка" data-en="Support">Поддержка</h3>
+                    <p data-ru="Остаюсь на связи — разово или по абонентскому обслуживанию." data-en="I stay in touch — one-time or via retainer support.">Остаюсь на связи — разово или по абонентскому обслуживанию.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ============================================
+         6. ПРЕИМУЩЕСТВА
+    ============================================= -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title" data-ru="Преимущества" data-en="Benefits">Преимущества</h2>
+
+            <div class="benefits__grid">
+                <div class="benefit">
+                    <h3 data-ru="Прозрачные цены" data-en="Transparent pricing">Прозрачные цены</h3>
+                    <p data-ru="Смета до начала работ. Никаких скрытых доплат." data-en="Estimate before work starts. No hidden fees.">Смета до начала работ. Никаких скрытых доплат.</p>
+                </div>
+                <div class="benefit">
+                    <h3 data-ru="Быстрый отклик" data-en="Fast response">Быстрый отклик</h3>
+                    <p data-ru="Отвечаю в течение часа в рабочее время. Срочные задачи — приоритетно." data-en="I respond within an hour during business hours. Urgent tasks — prioritized.">Отвечаю в течение часа в рабочее время. Срочные задачи — приоритетно.</p>
+                </div>
+                <div class="benefit">
+                    <h3 data-ru="Документация" data-en="Documentation">Документация</h3>
+                    <p data-ru="Всё, что настроено, описано. Не будет ситуации «а как это работает?»." data-en="Everything configured is documented. No more “how does this work?”.">Всё, что настроено, описано. Не будет ситуации «а как это работает?».</p>
+                </div>
+                <div class="benefit">
+                    <h3 data-ru="SLA-обслуживание" data-en="SLA-based support">SLA-обслуживание</h3>
+                    <p data-ru="Фиксированные сроки реакции и восстановления по договору." data-en="Fixed response and recovery times under contract.">Фиксированные сроки реакции и восстановления по договору.</p>
+                </div>
+                <div class="benefit">
+                    <h3 data-ru="Опыт с разным стеком" data-en="Experience with diverse stack">Опыт с разным стеком</h3>
+                    <p data-ru="Linux и Windows, 1С, AD, Docker, облака, сети, телефония." data-en="Linux and Windows, 1C, AD, Docker, clouds, networks, telephony.">Linux и Windows, 1С, AD, Docker, облака, сети, телефония.</p>
+                </div>
+                <div class="benefit">
+                    <h3 data-ru="Работаю по всей России" data-en="Serving all of Russia">Работаю по всей России</h3>
+                    <p data-ru="Удалённо — везде. Очно — Санкт-Петербург и Екатеринбург." data-en="Remote — anywhere. On-site — Saint Petersburg and Yekaterinburg.">Удалённо — везде. Очно — Санкт-Петербург и Екатеринбург.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         7. ЦЕНЫ
+    ============================================= -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title" data-ru="Цены" data-en="Pricing">Цены</h2>
+            <p class="section-subtitle" 
+               data-ru="Точную стоимость назову после обсуждения задачи. Ниже — ориентиры." 
+               data-en="Exact price after we discuss the task. Below are rough guidelines.">
+                Точную стоимость назову после обсуждения задачи. Ниже — ориентиры.
+            </p>
+
+            <div class="pricing__grid">
+                <div class="price-card">
+                    <h3 data-ru="Разовая задача" data-en="One-time task">Разовая задача</h3>
+                    <p class="price-card__price" data-ru="от 3 000 ₽" data-en="from 3 000 RUB">от 3 000 ₽</p>
+                    <ul>
+                        <li data-ru="Консультация или выезд" data-en="Consultation or on-site visit">Консультация или выезд</li>
+                        <li data-ru="Настройка конкретного сервиса" data-en="Specific service configuration">Настройка конкретного сервиса</li>
+                        <li data-ru="Диагностика проблемы" data-en="Problem diagnostics">Диагностика проблемы</li>
+                    </ul>
+                </div>
+                <div class="price-card price-card--featured">
+                    <h3 data-ru="Абонентское обслуживание" data-en="Retainer support">Абонентское обслуживание</h3>
+                    <p class="price-card__price" data-ru="от 15 000 ₽ / мес" data-en="from 15 000 RUB / mo">от 15 000 ₽ / мес</p>
+                    <ul>
+                        <li data-ru="Поддержка пользователей" data-en="User support">Поддержка пользователей</li>
+                        <li data-ru="Мониторинг и резервное копирование" data-en="Monitoring and backups">Мониторинг и резервное копирование</li>
+                        <li data-ru="Плановые работы и обновления" data-en="Scheduled maintenance and updates">Плановые работы и обновления</li>
+                        <li data-ru="Фиксированное время реакции (SLA)" data-en="Fixed response time (SLA)">Фиксированное время реакции (SLA)</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <h3 data-ru="Проект «под ключ»" data-en="Turnkey project">Проект «под ключ»</h3>
+                    <p class="price-card__price" data-ru="по запросу" data-en="on request">по запросу</p>
+                    <ul>
+                        <li data-ru="Аудит и проектирование" data-en="Audit and design">Аудит и проектирование</li>
+                        <li data-ru="Внедрение инфраструктуры" data-en="Infrastructure deployment">Внедрение инфраструктуры</li>
+                        <li data-ru="Миграция и запуск" data-en="Migration and launch">Миграция и запуск</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         8. КОНТАКТЫ
+    ============================================= -->
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <h2 class="section-title" data-ru="Контакты" data-en="Contacts">Контакты</h2>
+
+            <p class="contacts__text" 
+               data-ru="Опишите задачу удобным способом — отвечу в течение часа в рабочее время." 
+               data-en="Describe your task in any convenient way — I will reply within an hour during business hours.">
+                Опишите задачу удобным способом — отвечу в течение часа в рабочее время.
+            </p>
+
+            <div class="contacts__buttons">
+                <a href="tel:+79222227771" class="btn btn--primary">
+                    <span data-ru="Позвонить" data-en="Call">Позвонить</span>
+                </a>
+                <a href="https://t.me/GooRooMan" class="btn btn--outline" target="_blank" rel="noopener">
+                    Telegram
+                </a>
+                <a href="mailto:admin@lii-it.ru" class="btn btn--outline">
+                    Email
+                </a>
+            </div>
+
+            <ul class="contacts__list">
+                <li>
+                    <strong data-ru="Телефон:" data-en="Phone:">Телефон:</strong>
+                    <a href="tel:+79222227771">+7 (922) 222-77-71</a>
+                </li>
+                <li>
+                    <strong>Telegram:</strong>
+                    <a href="https://t.me/GooRooMan" target="_blank" rel="noopener">@GooRooMan</a>
+                </li>
+                <li>
+                    <strong>Email:</strong>
+                    <a href="mailto:admin@lii-it.ru">admin@lii-it.ru</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================
+         9. FOOTER
+    ============================================= -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p class="footer__brand">Lii-iT</p>
+            <p class="footer__slogan" 
+               data-ru="Надёжно, как должно быть" 
+               data-en="Reliable, as it should be">
+                Надёжно, как должно быть
+            </p>
+            <p class="footer__copy">© <span id="year"></span> Lii-iT</p>
+        </div>
+    </footer>
+
+	<!-- Кнопка «Наверх» -->
+	<button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">
+		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+			<path d="M12 19V5M5 12l7-7 7 7"/>
+		</svg>
+	</button>
+
+    <!-- Скрипт (подключим на шаге 3) -->
+    <script src="js/script.js"></script>
+</body>
+</html>
