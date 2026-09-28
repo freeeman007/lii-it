@@ -15,7 +15,7 @@
     --transition:      0.2s ease;
     --font:            'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --success:         #22c55e;
-	--header-h:		   72px;
+    --header-h:        72px;
 }
 
 /* ----- ТЁМНАЯ ТЕМА (по умолчанию) ----- */
@@ -296,6 +296,12 @@ section {
     50%      { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0.05); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .status-dot {
+        animation: none;
+    }
+}
+
 .hero__title {
     font-size: clamp(36px, 6vw, 64px);
     font-weight: 800;
@@ -331,7 +337,7 @@ section {
 .about__content {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
-    gap: 60px;
+    gap: 48px;
     align-items: start;
 }
 
@@ -345,8 +351,8 @@ section {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 28px;
-	box-shadow: var(--shadow);
+    padding: 24px;
+    box-shadow: var(--shadow);
 }
 
 .about__facts li {
@@ -447,7 +453,7 @@ section {
     padding: 0 0 24px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 10px 32px;
+    gap: 12px 32px;
 }
 
 .accordion__body li {
@@ -475,16 +481,16 @@ section {
 .process__steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 28px;
+    gap: 24px;
     counter-reset: step;
-	box-shadow: var(--shadow);
 }
 
 .process__step {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 28px;
+    padding: 24px;
+    box-shadow: var(--shadow);
     transition: border-color var(--transition), transform var(--transition);
 }
 
@@ -528,7 +534,7 @@ section {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 28px;
+    padding: 24px;
     box-shadow: var(--shadow);
     transition: border-color var(--transition), transform var(--transition);
 }
@@ -565,7 +571,7 @@ section {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 32px;
-	box-shadow: var(--shadow);
+    box-shadow: var(--shadow);
     transition: border-color var(--transition), transform var(--transition);
 }
 
@@ -709,7 +715,12 @@ section {
    ============================================================ */
 
 /* Планшеты */
-
+@media (max-width: 1024px) {
+    .about__content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
 
 /* Мобильные */
 @media (max-width: 768px) {
@@ -721,12 +732,16 @@ section {
         padding: 140px 0 80px;
     }
 
-	:root {
-    	--header-h: 64px;
-	}
+    :root {
+        --header-h: 64px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
 
     .header__actions .btn {
-        display: none; /* на мобильных оставим только переключатель языка */
+        display: none;
     }
 
     .contacts__list {
@@ -743,7 +758,28 @@ section {
     .accordion__body ul {
         grid-template-columns: 1fr;
     }
+
+    .about__facts {
+        padding: 20px;
+    }
+
+    .about__facts li {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+    .about__facts span {
+        overflow-wrap: anywhere;
+    }
+
+    .scroll-top {
+        right: 16px;
+        bottom: 16px;
+        width: 44px;
+        height: 44px;
+    }
 }
+
 /* ============================================================
    13. ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ И БУРГЕР
    ============================================================ */
@@ -823,29 +859,24 @@ body.no-scroll {
    14. МОБИЛЬНОЕ МЕНЮ
    ============================================================ */
 
-@media (max-width: 992px) {
-     .about__content {
-     	grid-template-columns: 1fr;   /* одна колонка */
-     	gap: 32px;
-    }
-	
-	.burger {
+@media (max-width: 1024px) {
+    .burger {
         display: block;
     }
 
     .nav {
         position: fixed;
-        top: var(--header-h);             /* десктопная высота шапки */
+        top: var(--header-h);
         left: 0;
         right: 0;
         bottom: 0;
-		z-index: 99;
+        z-index: 99;
         background: var(--bg);
         padding: 24px;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         overflow-y: auto;
-        -webkit-overflow-scrolling: touch; /* плавный скролл на iOS */
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav.is-open {
@@ -865,26 +896,6 @@ body.no-scroll {
         display: block;
         padding: 18px 0;
         font-size: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-	.container {
-        padding: 0 16px;   /* уменьшаем боковой отступ */
-    }
-
-    .about__facts {
-        padding: 20px;     /* уменьшаем внутренние отступы */
-    }
-
-    .about__facts li {
-        font-size: 14px;   /* чтобы длинные строки переносились лучше */
-        word-break: break-word;
-    }
-
-    .about__facts span {
-        word-break: break-word;
-        overflow-wrap: anywhere;
     }
 }
 
@@ -916,7 +927,6 @@ body.theme-light .header {
                 0 4px 20px -8px rgba(15, 23, 42, 0.08);
 }
 
-/* В тёмной теме тень не нужна — там границы хватает */
 body.theme-dark .header {
     box-shadow: none;
 }
@@ -956,7 +966,6 @@ body.theme-dark .header {
     transform: translateY(0);
 }
 
-/* Если у пользователя отключены анимации в системе — не анимируем */
 @media (prefers-reduced-motion: reduce) {
     .reveal {
         opacity: 1;
@@ -1002,20 +1011,11 @@ body.theme-dark .header {
     transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-    .scroll-top {
-        right: 16px;
-        bottom: 16px;
-        width: 44px;
-        height: 44px;
-    }
-}
-
 /* ============================================================
    20. ЗАЩИТА ОТ ГОРИЗОНТАЛЬНОГО СКРОЛЛА
    ============================================================ */
 
 html, body {
     max-width: 100%;
-	overflow-x: clip;   /* вместо hidden — clip не создаёт скролл-контекст */
+    overflow-x: clip;
 }
