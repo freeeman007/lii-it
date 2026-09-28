@@ -721,9 +721,9 @@ section {
         padding: 140px 0 80px;
     }
 
-    .header__inner {
-        height: 64px;
-    }
+	:root {
+    	--header-h: 64px;
+	}
 
     .header__actions .btn {
         display: none; /* на мобильных оставим только переключатель языка */
@@ -869,10 +869,6 @@ body.no-scroll {
 }
 
 @media (max-width: 768px) {
-    .nav {
-        top: 64px;              /* мобильная высота шапки */
-    }
-
 	.container {
         padding: 0 16px;   /* уменьшаем боковой отступ */
     }
