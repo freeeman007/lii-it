@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  
+  <!-- Декоративное свечение -->
+  <circle cx="1050" cy="120" r="280" fill="#3b82f6" opacity="0.18"/>
+  
+  <!-- Логотип -->
+  <text x="80" y="140" 
+        font-family="Inter, -apple-system, sans-serif" 
+        font-size="56" 
+        font-weight="800" 
+        fill="#e2e8f0">Lii-iT<tspan fill="#3b82f6">.</tspan></text>
+  
+  <!-- Заголовок -->
+  <text x="80" y="330" 
+        font-family="Inter, -apple-system, sans-serif" 
+        font-size="64" 
+        font-weight="800" 
+        fill="#e2e8f0">Системный администратор</text>
+  <text x="80" y="410" 
+        font-family="Inter, -apple-system, sans-serif" 
+        font-size="64" 
+        font-weight="800" 
+        fill="#e2e8f0">для бизнеса</text>
+  
+  <!-- Слоган -->
+  <text x="80" y="510" 
+        font-family="Inter, -apple-system, sans-serif" 
+        font-size="32" 
+        font-weight="600" 
+        fill="#3b82f6">Надёжно, как должно быть</text>
+  
+  <!-- Регионы -->
+  <text x="80" y="580" 
+        font-family="Inter, -apple-system, sans-serif" 
+        font-size="24" 
+        font-weight="400" 
+        fill="#94a3b8">Удалённо по всей России · Очно в СПб и Екатеринбурге</text>
+</svg>

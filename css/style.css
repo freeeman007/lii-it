@@ -1,0 +1,990 @@
+/* ============================================================
+   Lii-iT — стили лендинга
+   Тёмная тема. Две палитры: A (синий, по умолчанию) и C (фиолетовый)
+   ============================================================ */
+
+/* ============================================================
+   1. ПЕРЕМЕННЫЕ И БАЗА
+   ============================================================ */
+
+/* Значения по умолчанию (будут переопределены классами theme-a / theme-c) */
+:root {
+    --container:       1200px;
+    --radius:          12px;
+    --radius-sm:       8px;
+    --transition:      0.2s ease;
+    --font:            'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --success:         #22c55e;
+}
+
+/* ----- ТЁМНАЯ ТЕМА (по умолчанию) ----- */
+body.theme-dark {
+    --bg:              #0f172a;
+    --bg-alt:          #111c33;
+    --card:            #1e293b;
+    --card-hover:      #243449;
+    --border:          #2a3a52;
+    --accent:          #3b82f6;
+    --accent-hover:    #2563eb;
+    --accent-soft:     rgba(59, 130, 246, 0.12);
+    --header-bg:       rgba(15, 23, 42, 0.85);
+    --text:            #e2e8f0;
+    --text-muted:      #94a3b8;
+    --shadow:          0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+/* ----- СВЕТЛАЯ ТЕМА ----- */
+body.theme-light {
+    --bg:              #f1f5f9;   /* основной фон — светло-серо-голубой */
+    --bg-alt:          #e8eef5;   /* фон чередующихся секций — чуть темнее */
+    --card:            #ffffff;   /* карточки — чисто белые, чтобы «всплывали» */
+    --card-hover:      #f8fafc;
+    --border:          #d8e0ea;   /* границы заметнее */
+    --accent:          #2563eb;
+    --accent-hover:    #1d4ed8;
+    --accent-soft:     rgba(37, 99, 235, 0.10);
+    --header-bg:       rgba(241, 245, 249, 0.85); /* шапка в тон фона, не белая */
+    --text:            #0f172a;
+    --text-muted:      #64748b;
+    --shadow:          0 4px 16px -4px rgba(15, 23, 42, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* чтобы якоря не уезжали под фиксированный хедер */
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+img, svg {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* ----- Контейнер ----- */
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ----- Заголовки секций ----- */
+.section-title {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 17px;
+    max-width: 700px;
+    margin-bottom: 48px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+/* Чередование фона у секций */
+.about,
+.process,
+.contacts {
+    background: var(--bg-alt);
+}
+
+/* ============================================================
+   2. КНОПКИ
+   ============================================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 26px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all var(--transition);
+    white-space: nowrap;
+}
+
+.btn--primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background: var(--accent-hover);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.btn--outline {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.btn--outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   3. HEADER
+   ============================================================ */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--header-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: background var(--transition);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    gap: 24px;
+}
+
+.logo__text {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.03em;
+}
+
+.logo__text::after {
+    content: '.';
+    color: var(--accent);
+}
+
+.nav__list {
+    display: flex;
+    gap: 28px;
+}
+
+.nav__list a {
+    color: var(--text-muted);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.nav__list a:hover {
+    color: var(--accent);
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.lang-switch {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.lang-switch:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ============================================================
+   4. HERO
+   ============================================================ */
+
+.hero {
+    padding: 180px 0 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Мягкое свечение на фоне */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero__inner {
+    position: relative;
+    max-width: 800px;
+}
+
+.hero__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success);
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15); }
+    50%      { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0.05); }
+}
+
+.hero__title {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+}
+
+.hero__slogan {
+    font-size: clamp(20px, 2.5vw, 26px);
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.hero__subtitle {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 620px;
+}
+
+.hero__buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* ============================================================
+   5. ОБО МНЕ
+   ============================================================ */
+
+.about__content {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about__text p {
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    font-size: 16.5px;
+}
+
+.about__facts {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+	box-shadow: var(--shadow);
+}
+
+.about__facts li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+}
+
+.about__facts li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.about__facts li:first-child {
+    padding-top: 0;
+}
+
+.about__facts strong {
+    display: block;
+    color: var(--accent);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.about__facts span {
+    color: var(--text);
+}
+
+/* ============================================================
+   6. УСЛУГИ (аккордеон)
+   ============================================================ */
+
+.accordion {
+    border-top: 1px solid var(--border);
+}
+
+.accordion__item {
+    border-bottom: 1px solid var(--border);
+}
+
+.accordion__header {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    transition: color var(--transition);
+}
+
+.accordion__header:hover {
+    color: var(--accent);
+}
+
+.accordion__icon {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--accent);
+    transition: transform var(--transition);
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+}
+
+.accordion__item.is-open .accordion__icon {
+    transform: rotate(45deg);
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+.accordion__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.accordion__item.is-open .accordion__body {
+    max-height: 800px;
+}
+
+.accordion__body ul {
+    padding: 0 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px 32px;
+}
+
+.accordion__body li {
+    color: var(--text-muted);
+    font-size: 15px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.accordion__body li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+/* ============================================================
+   7. КАК Я РАБОТАЮ
+   ============================================================ */
+
+.process__steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+    counter-reset: step;
+	box-shadow: var(--shadow);
+}
+
+.process__step {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.process__step:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.process__number {
+    display: block;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent);
+    opacity: 0.4;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.process__step h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.process__step p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* ============================================================
+   8. ПРЕИМУЩЕСТВА
+   ============================================================ */
+
+.benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.benefit {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.benefit:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.benefit h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.benefit p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* ============================================================
+   9. ЦЕНЫ
+   ============================================================ */
+
+.pricing__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.price-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+	box-shadow: var(--shadow);
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.price-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.price-card--featured {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent), 0 20px 40px -20px var(--accent);
+}
+
+.price-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.price-card__price {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.price-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price-card li {
+    color: var(--text-muted);
+    font-size: 15px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.price-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* ============================================================
+   10. КОНТАКТЫ
+   ============================================================ */
+
+.contacts {
+    text-align: center;
+}
+
+.contacts__text {
+    color: var(--text-muted);
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto 32px;
+}
+
+.contacts__buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+}
+
+.contacts__list {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contacts__list li {
+    text-align: left;
+}
+
+.contacts__list strong {
+    display: block;
+    color: var(--accent);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.contacts__list a {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.contacts__list a:hover {
+    color: var(--accent);
+}
+
+/* ============================================================
+   11. FOOTER
+   ============================================================ */
+
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0;
+    background: var(--bg);
+}
+
+.footer__inner {
+    text-align: center;
+}
+
+.footer__brand {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+}
+
+.footer__brand::after {
+    content: '.';
+    color: var(--accent);
+}
+
+.footer__slogan {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.footer__copy {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* ============================================================
+   12. АДАПТИВНОСТЬ
+   ============================================================ */
+
+/* Планшеты */
+
+
+/* Мобильные */
+@media (max-width: 768px) {
+    section {
+        padding: 70px 0;
+    }
+
+    .hero {
+        padding: 140px 0 80px;
+    }
+
+    .header__inner {
+        height: 64px;
+    }
+
+    .header__actions .btn {
+        display: none; /* на мобильных оставим только переключатель языка */
+    }
+
+    .contacts__list {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contacts__list li {
+        text-align: center;
+    }
+
+    .accordion__body ul {
+        grid-template-columns: 1fr;
+    }
+}
+/* ============================================================
+   13. ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ И БУРГЕР
+   ============================================================ */
+
+.theme-switch {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-switch:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ----- Бургер (скрыт на десктопе) ----- */
+.burger {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    position: relative;
+    transition: border-color var(--transition);
+}
+
+.burger:hover {
+    border-color: var(--accent);
+}
+
+.burger span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    width: 18px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: all var(--transition);
+}
+
+.burger span:nth-child(1) { top: 13px; }
+.burger span:nth-child(2) { top: 19px; }
+.burger span:nth-child(3) { top: 25px; }
+
+.burger.is-active span:nth-child(1) {
+    top: 19px;
+    transform: translateX(-50%) rotate(45deg);
+}
+.burger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+.burger.is-active span:nth-child(3) {
+    top: 19px;
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* ============================================================
+   14. МОБИЛЬНОЕ МЕНЮ
+   ============================================================ */
+
+@media (max-width: 992px) {
+    .burger {
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--bg);
+        padding: 40px 24px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+    }
+
+    .nav.is-open {
+        transform: translateX(0);
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav__list li {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav__list a {
+        display: block;
+        padding: 18px 0;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        top: 64px;
+    }
+}
+
+/* ============================================================
+   15. ПЛАВНАЯ СМЕНА ТЕМЫ
+   ============================================================ */
+
+.header,
+.card,
+.accordion__item,
+.accordion__header,
+.benefit,
+.price-card,
+.process__step,
+.about__facts,
+.contacts__list a,
+.nav__list a {
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+/* ============================================================
+   16. ШАПКА В СВЕТЛОЙ ТЕМЕ
+   ============================================================ */
+
+body.theme-light .header {
+    box-shadow: 0 1px 0 var(--border),
+                0 4px 20px -8px rgba(15, 23, 42, 0.08);
+}
+
+/* В тёмной теме тень не нужна — там границы хватает */
+body.theme-dark .header {
+    box-shadow: none;
+}
+
+/* ============================================================
+   17. АКТИВНАЯ ССЫЛКА В МЕНЮ
+   ============================================================ */
+
+.nav__list a.is-active {
+    color: var(--accent);
+    position: relative;
+}
+
+.nav__list a.is-active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+/* ============================================================
+   18. ПЛАВНОЕ ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ
+   ============================================================ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Если у пользователя отключены анимации в системе — не анимируем */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ============================================================
+   19. КНОПКА «НАВЕРХ»
+   ============================================================ */
+
+.scroll-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px -8px var(--accent);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 90;
+}
+
+.scroll-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .scroll-top {
+        right: 16px;
+        bottom: 16px;
+        width: 44px;
+        height: 44px;
+    }
+}
