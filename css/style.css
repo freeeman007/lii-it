@@ -999,3 +999,98 @@ html, body {
     max-width: 100%;
     overflow-x: clip;
 }
+
+/* ============================================================
+   20. ФОРМА ОБРАТНОЙ СВЯЗИ
+   ============================================================ */
+
+.contact-form-wrap {
+    margin-top: 64px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.contact-form__title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+}
+
+.contact-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.contact-form__label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.contact-form input[type="text"],
+.contact-form textarea {
+    width: 100%;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 15px;
+    transition: border-color var(--transition);
+    resize: vertical;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+.contact-form__submit {
+    align-self: flex-start;
+}
+
+.contact-form__note {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+    .contact-form__row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form__submit {
+        align-self: stretch;
+    }
+}
