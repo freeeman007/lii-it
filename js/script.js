@@ -48,7 +48,13 @@
             const text = el.getAttribute('data-' + lang);
             if (text) el.textContent = text;
         });
-
+       
+        // Перевод плейсхолдеров формы
+        document.querySelectorAll('[data-ru-placeholder][data-en-placeholder]').forEach(function (el) {
+            const ph = el.getAttribute('data-' + lang + '-placeholder');
+            if (ph) el.setAttribute('placeholder', ph);
+        });
+       
         // Меняем атрибут lang у <html>
         document.documentElement.setAttribute('lang', lang);
 
