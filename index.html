@@ -21,12 +21,66 @@
     <meta name="twitter:description" content="Удалённо по всей России. Очно в Санкт-Петербурге и Екатеринбурге.">
     <meta name="twitter:image" content="https://lii-it.ru/img/og-image.png">
 
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Lii-iT",
+      "description": "Системный администратор для бизнеса. Удалённо по всей России, очно в Санкт-Петербурге и Екатеринбурге.",
+      "url": "https://lii-it.ru",
+      "telephone": "+7-922-222-77-71",
+      "email": "admin@lii-it.ru",
+      "image": "https://lii-it.ru/img/og-image.png",
+      "areaServed": [
+        { "@type": "Country", "name": "Россия" },
+        { "@type": "City", "name": "Санкт-Петербург" },
+        { "@type": "City", "name": "Екатеринбург" }
+      ],
+      "serviceType": [
+        "Системное администрирование",
+        "Поддержка серверов",
+        "Сетевая инфраструктура",
+        "Информационная безопасность",
+        "Абонентское обслуживание IT"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Ильнур"
+      },
+      "priceRange": "от 3 000 ₽"
+    }
+    </script>
+
     <!-- Шрифт Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JV9PR48VW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1JV9PR48VW');
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113155355', 'ym');
+
+        ym(113155355, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/113155355" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 
@@ -129,7 +183,7 @@
                     </li>
                     <li>
                         <strong data-ru="География:" data-en="Geography:">География:</strong>
-                        <span data-ru="удалённо по России, очно — СПб и ЕКБ" data-en="remote across Russia, on-site — SPb and EKB">удалённо по России, очно — СПб и ЕКБ</span>
+                        <span data-ru="удалённо по России, очно — Санкт-Петербург и Екатеринбург" data-en="remote across Russia, on-site — SPb and EKB">удалённо по России, очно — СПб и ЕКБ</span>
                     </li>
                     <li>
                         <strong data-ru="Формат работы:" data-en="Work format:">Формат работы:</strong>
@@ -400,7 +454,7 @@
     </section>
 
     <!-- ============================================
-         8. КОНТАКТЫ
+         8. КОНТАКТЫ + ФОРМА
     ============================================= -->
     <section class="contacts" id="contacts">
         <div class="container">
@@ -438,6 +492,66 @@
                     <a href="mailto:admin@lii-it.ru">admin@lii-it.ru</a>
                 </li>
             </ul>
+
+            <!-- Форма обратной связи -->
+            <div class="contact-form-wrap">
+                <h3 class="contact-form__title"
+                    data-ru="Оставить заявку"
+                    data-en="Send a request">
+                    Оставить заявку
+                </h3>
+
+                <form class="contact-form"
+                      action="https://formspree.io/f/mzezyazd"
+                      method="POST">
+
+                    <div class="contact-form__row">
+                        <label class="contact-form__label">
+                            <span data-ru="Ваше имя" data-en="Your name">Ваше имя</span>
+                            <input type="text"
+                                   name="name"
+                                   required
+                                   placeholder="Иван"
+                                   data-ru-placeholder="Иван"
+                                   data-en-placeholder="John">
+                        </label>
+
+                        <label class="contact-form__label">
+                            <span data-ru="Контакт для связи" data-en="Contact">Контакт для связи</span>
+                            <input type="text"
+                                   name="contact"
+                                   required
+                                   placeholder="Телефон, Telegram или email"
+                                   data-ru-placeholder="Телефон, Telegram или email"
+                                   data-en-placeholder="Phone, Telegram or email">
+                        </label>
+                    </div>
+
+                    <label class="contact-form__label">
+                        <span data-ru="Опишите задачу" data-en="Describe your task">Опишите задачу</span>
+                        <textarea name="message"
+                                  rows="5"
+                                  required
+                                  placeholder="Кратко: что нужно сделать, какая инфраструктура, сроки..."
+                                  data-ru-placeholder="Кратко: что нужно сделать, какая инфраструктура, сроки..."
+                                  data-en-placeholder="Briefly: what needs to be done, what infrastructure, deadlines..."></textarea>
+                    </label>
+
+                    <!-- Скрытые служебные поля Formspree -->
+                    <input type="hidden" name="_subject" value="Новая заявка с lii-it.ru">
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <button type="submit" class="btn btn--primary contact-form__submit">
+                        <span data-ru="Отправить заявку" data-en="Send request">Отправить заявку</span>
+                    </button>
+
+                    <p class="contact-form__note"
+                       data-ru="Нажимая кнопку, вы соглашаетесь на обработку персональных данных."
+                       data-en="By clicking the button, you agree to personal data processing.">
+                        Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
+                    </p>
+                </form>
+            </div>
         </div>
     </section>
 
