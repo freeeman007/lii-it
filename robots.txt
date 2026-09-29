@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lii-it.ru/sitemap.xml
