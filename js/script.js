@@ -31,7 +31,21 @@
             if (!isOpen) {
                 item.classList.add('is-open');
             }
+
+            // Синхронизируем состояние для скринридеров
+            accordionItems.forEach(function (other) {
+                const otherHeader = other.querySelector('.accordion__header');
+                const otherBody = other.querySelector('.accordion__body');
+                const open = other.classList.contains('is-open');
+                if (otherHeader) otherHeader.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (otherBody) otherBody.setAttribute('aria-hidden', open ? 'false' : 'true');
+            });
         });
+
+        // Исходное состояние панелей
+        const initialBody = item.querySelector('.accordion__body');
+        if (initialBody) initialBody.setAttribute('aria-hidden', 'true');
+
     });
 
 
@@ -95,6 +109,11 @@
                 'title',
                 theme === 'dark' ? 'Тёмная тема (нажмите для светлой)' : 'Светлая тема (нажмите для тёмной)'
             );
+            themeSwitch.setAttribute(
+                'aria-label',
+                theme === 'dark' ? 'Сейчас тёмная тема. Переключить на светлую' : 'Сейчас светлая тема. Переключить на тёмную'
+            );
+            themeSwitch.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
         }
 
         localStorage.setItem('lii-it-theme', theme);
@@ -217,6 +236,53 @@
 
         scrollTopBtn.addEventListener('click', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    /* ============================================================
+       9. ОТПРАВКА ФОРМЫ БЕЗ УХОДА СО СТРАНИЦЫ
+       Работает как прогрессивное улучшение: если fetch недоступен,
+       форма отправляется обычным POST на Formspree.
+       ============================================================ */
+    const contactForm = document.querySelector('.contact-form');
+    const formStatus = document.getElementById('formStatus');
+
+    if (contactForm && formStatus && window.fetch && window.FormData) {
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const isEn = document.documentElement.lang === 'en';
+            const text = isEn ? {
+                sending: 'Sending…',
+                ok: 'Thank you! Your request has been sent — I will reply within a working day.',
+                err: 'Could not send. Please email admin@lii-it.ru or write to Telegram @GooRooMan.'
+            } : {
+                sending: 'Отправляем…',
+                ok: 'Спасибо! Заявка отправлена — отвечу в течение рабочего дня.',
+                err: 'Не удалось отправить. Напишите на admin@lii-it.ru или в Telegram @GooRooMan.'
+            };
+
+            const submitBtn = contactForm.querySelector('[type="submit"]');
+            formStatus.hidden = false;
+            formStatus.className = 'contact-form__status';
+            formStatus.textContent = text.sending;
+            if (submitBtn) submitBtn.disabled = true;
+
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { 'Accept': 'application/json' }
+            }).then(function (response) {
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                contactForm.reset();
+                formStatus.classList.add('contact-form__status--ok');
+                formStatus.textContent = text.ok;
+            }).catch(function () {
+                formStatus.classList.add('contact-form__status--error');
+                formStatus.textContent = text.err;
+            }).then(function () {
+                if (submitBtn) submitBtn.disabled = false;
+            });
         });
     }
 

@@ -7,6 +7,10 @@
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="apple-touch-icon" href="img/favicon.svg">
     <meta name="description" content="Системный администратор для бизнеса. Удалённо по всей России, очно в Санкт-Петербурге и Екатеринбурге. Серверы, сети, безопасность, поддержка.">
+    <link rel="canonical" href="https://lii-it.ru/">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f1f5f9" media="(prefers-color-scheme: light)">
+    <meta name="format-detection" content="telephone=no">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -14,6 +18,11 @@
     <meta property="og:description" content="Удалённо по всей России. Очно в Санкт-Петербурге и Екатеринбурге. Серверы, сети, безопасность, поддержка.">
     <meta property="og:image" content="https://lii-it.ru/img/og-image.png">
     <meta property="og:url" content="https://lii-it.ru/">
+    <meta property="og:site_name" content="Lii-iT">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Lii-iT — системный администратор для бизнеса">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -104,10 +113,10 @@
             </nav>
 
             <div class="header__actions">
-                <button class="lang-switch" id="langSwitch" type="button" title="Сменить язык">
+                <button class="lang-switch" id="langSwitch" type="button" title="Сменить язык" aria-label="Сменить язык: русский / английский">
                     <span class="lang-switch__current">RU</span>
                 </button>
-                <button class="theme-switch" id="themeSwitch" type="button" title="Сменить тему">A</button>
+                <button class="theme-switch" id="themeSwitch" type="button" title="Сменить тему" aria-label="Переключить тему" aria-pressed="false">A</button>
                 <a href="#contacts" class="btn btn--primary" data-ru="Связаться" data-en="Contact me">Связаться</a>
                 <button class="burger" id="burger" type="button" aria-label="Меню">
                     <span></span>
@@ -210,11 +219,11 @@
             <div class="accordion">
 
                 <div class="accordion__item">
-                    <button class="accordion__header" type="button">
+                    <button class="accordion__header" type="button" aria-expanded="false" aria-controls="acc-panel-1" id="acc-btn-1">
                         <span data-ru="Поддержка серверов и инфраструктуры" data-en="Server & Infrastructure Support">Поддержка серверов и инфраструктуры</span>
                         <span class="accordion__icon">+</span>
                     </button>
-                    <div class="accordion__body">
+                    <div class="accordion__body" id="acc-panel-1" role="region" aria-labelledby="acc-btn-1">
                         <ul>
                             <li data-ru="Установка и настройка Windows Server / Linux (Ubuntu, Debian, CentOS)" data-en="Installation and configuration of Windows Server / Linux (Ubuntu, Debian, CentOS)">Установка и настройка Windows Server / Linux (Ubuntu, Debian, CentOS)</li>
                             <li data-ru="Настройка ролей: AD, DNS, DHCP, файловые серверы, RDS" data-en="Role configuration: AD, DNS, DHCP, file servers, RDS">Настройка ролей: AD, DNS, DHCP, файловые серверы, RDS</li>
@@ -230,11 +239,11 @@
                 </div>
 
                 <div class="accordion__item">
-                    <button class="accordion__header" type="button">
+                    <button class="accordion__header" type="button" aria-expanded="false" aria-controls="acc-panel-2" id="acc-btn-2">
                         <span data-ru="Сетевая инфраструктура" data-en="Network Infrastructure">Сетевая инфраструктура</span>
                         <span class="accordion__icon">+</span>
                     </button>
-                    <div class="accordion__body">
+                    <div class="accordion__body" id="acc-panel-2" role="region" aria-labelledby="acc-btn-2">
                         <ul>
                             <li data-ru="Настройка маршрутизаторов, коммутаторов, VLAN" data-en="Configuration of routers, switches, VLANs">Настройка маршрутизаторов, коммутаторов, VLAN</li>
                             <li data-ru="Настройка VPN: OpenVPN, WireGuard, IPsec" data-en="VPN setup: OpenVPN, WireGuard, IPsec">Настройка VPN: OpenVPN, WireGuard, IPsec</li>
@@ -247,11 +256,11 @@
                 </div>
 
                 <div class="accordion__item">
-                    <button class="accordion__header" type="button">
+                    <button class="accordion__header" type="button" aria-expanded="false" aria-controls="acc-panel-3" id="acc-btn-3">
                         <span data-ru="Офисная и корпоративная инфраструктура" data-en="Office & Corporate Infrastructure">Офисная и корпоративная инфраструктура</span>
                         <span class="accordion__icon">+</span>
                     </button>
-                    <div class="accordion__body">
+                    <div class="accordion__body" id="acc-panel-3" role="region" aria-labelledby="acc-btn-3">
                         <ul>
                             <li data-ru="Настройка рабочих мест (Windows, macOS, Linux)" data-en="Workstation setup (Windows, macOS, Linux)">Настройка рабочих мест (Windows, macOS, Linux)</li>
                             <li data-ru="Настройка Active Directory, групповые политики" data-en="Active Directory and Group Policy setup">Настройка Active Directory, групповые политики</li>
@@ -265,11 +274,11 @@
                 </div>
 
                 <div class="accordion__item">
-                    <button class="accordion__header" type="button">
+                    <button class="accordion__header" type="button" aria-expanded="false" aria-controls="acc-panel-4" id="acc-btn-4">
                         <span data-ru="Безопасность" data-en="Security">Безопасность</span>
                         <span class="accordion__icon">+</span>
                     </button>
-                    <div class="accordion__body">
+                    <div class="accordion__body" id="acc-panel-4" role="region" aria-labelledby="acc-btn-4">
                         <ul>
                             <li data-ru="Настройка антивирусной защиты" data-en="Antivirus protection setup">Настройка антивирусной защиты</li>
                             <li data-ru="Аудит безопасности и закрытие уязвимостей" data-en="Security audit and vulnerability remediation">Аудит безопасности и закрытие уязвимостей</li>
@@ -283,11 +292,11 @@
                 </div>
 
                 <div class="accordion__item">
-                    <button class="accordion__header" type="button">
+                    <button class="accordion__header" type="button" aria-expanded="false" aria-controls="acc-panel-5" id="acc-btn-5">
                         <span data-ru="Облака и хостинг" data-en="Cloud & Hosting">Облака и хостинг</span>
                         <span class="accordion__icon">+</span>
                     </button>
-                    <div class="accordion__body">
+                    <div class="accordion__body" id="acc-panel-5" role="region" aria-labelledby="acc-btn-5">
                         <ul>
                             <li data-ru="Развёртывание и сопровождение VPS/VDS" data-en="VPS/VDS deployment and maintenance">Развёртывание и сопровождение VPS/VDS</li>
                             <li data-ru="Настройка облачных сервисов (Yandex Cloud, Selectel, AWS и т.п.)" data-en="Cloud services setup (Yandex Cloud, Selectel, AWS, etc.)">Настройка облачных сервисов (Yandex Cloud, Selectel, AWS и т.п.)</li>
@@ -299,11 +308,11 @@
                 </div>
 
                 <div class="accordion__item">
-                    <button class="accordion__header" type="button">
+                    <button class="accordion__header" type="button" aria-expanded="false" aria-controls="acc-panel-6" id="acc-btn-6">
                         <span data-ru="Поддержка пользователей и сервис" data-en="User Support & Service">Поддержка пользователей и сервис</span>
                         <span class="accordion__icon">+</span>
                     </button>
-                    <div class="accordion__body">
+                    <div class="accordion__body" id="acc-panel-6" role="region" aria-labelledby="acc-btn-6">
                         <ul>
                             <li data-ru="Удалённая и выездная поддержка" data-en="Remote and on-site support">Удалённая и выездная поддержка</li>
                             <li data-ru="Helpdesk / техподдержка пользователей" data-en="Helpdesk / user technical support">Helpdesk / техподдержка пользователей</li>
@@ -316,11 +325,11 @@
                 </div>
 
                 <div class="accordion__item">
-                    <button class="accordion__header" type="button">
+                    <button class="accordion__header" type="button" aria-expanded="false" aria-controls="acc-panel-7" id="acc-btn-7">
                         <span data-ru="Дополнительно" data-en="Additional Services">Дополнительно</span>
                         <span class="accordion__icon">+</span>
                     </button>
-                    <div class="accordion__body">
+                    <div class="accordion__body" id="acc-panel-7" role="region" aria-labelledby="acc-btn-7">
                         <ul>
                             <li data-ru="Настройка IP-телефонии (Asterisk, FreePBX)" data-en="IP telephony setup (Asterisk, FreePBX)">Настройка IP-телефонии (Asterisk, FreePBX)</li>
                             <li data-ru="Настройка видеонаблюдения" data-en="Video surveillance setup">Настройка видеонаблюдения</li>
@@ -546,10 +555,13 @@
                         <span data-ru="Отправить заявку" data-en="Send request">Отправить заявку</span>
                     </button>
 
-                    <p class="contact-form__note"
-                       data-ru="Нажимая кнопку, вы соглашаетесь на обработку персональных данных."
-                       data-en="By clicking the button, you agree to personal data processing.">
-                        Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
+                    <p class="contact-form__status" id="formStatus" role="status" aria-live="polite" hidden></p>
+
+                    <p class="contact-form__note">
+                        <span data-ru="Нажимая кнопку, вы соглашаетесь с"
+                              data-en="By clicking the button, you agree to the">Нажимая кнопку, вы соглашаетесь с</span>
+                        <a href="privacy.html" data-ru="политикой обработки персональных данных"
+                           data-en="personal data processing policy">политикой обработки персональных данных</a>.
                     </p>
                 </form>
             </div>
@@ -568,6 +580,10 @@
                 Надёжно, как должно быть
             </p>
             <p class="footer__copy">© <span id="year"></span> Lii-iT</p>
+            <p class="footer__links">
+                <a href="privacy.html" data-ru="Политика конфиденциальности"
+                   data-en="Privacy policy">Политика конфиденциальности</a>
+            </p>
         </div>
     </footer>
 
