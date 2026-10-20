@@ -61,6 +61,95 @@
     }
     </script>
 
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Что входит в абонентское обслуживание?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Обработка заявок пользователей, мониторинг серверов и сервисов, резервное копирование с проверкой восстановления, обновления и плановые работы, консультации и ведение документации — всё, что относится к текущей работе инфраструктуры. Проектные задачи (миграции, внедрения, настройка нового оборудования) считаются отдельно, со сметой до начала работ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "В какое время вы работаете?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Стандартный рабочий день — понедельник–пятница, 8 часов. Я постоянно за компьютером и на телефоне: обычно отвечаю в течение 15 минут, гарантированный срок реакции по договору — один час. Если ситуация требует, остаюсь и после рабочего дня."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как быстро вы реагируете на аварию?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Реакция — в течение часа в рабочее время, обычно быстрее. Восстановление зависит от причины: типовые сбои закрываются за один-четыре часа, сложные — по плану, срок которого я называю в тот же день. Если причина на стороне провайдера, вендора или облака, я беру коммуникацию с ними на себя."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "А ночью и в выходные?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Круглосуточного дежурства нет — и я не делаю вид, что есть. Для аварий, которые останавливают бизнес, мы до начала работ договариваемся о канале связи и порядке эскалации: кому звонить, при каких условиях и что считается критичным."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Вы работаете один? Что будет, если вы заболеете?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Работу веду сам, без субподрядчиков. Для очных задач в Екатеринбурге есть напарник: он приедет на место и посмотрит глазами, если нужна физическая работа с оборудованием. О плановом отсутствии предупреждаю заранее, а документация и доступы всегда остаются у вас — при необходимости инфраструктуру поднимет другой специалист по моим записям."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как передаются доступы и пароли?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Вы заводите для меня отдельные учётные записи, а не даёте свой личный пароль. Пароли храню в менеджере паролей, не в файле на рабочем столе. Владелец доступов — вы: мои учётки можно отозвать в любой момент, и это ничего не сломает, потому что инфраструктура не завязана на мои личные аккаунты."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Подпишете NDA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Подпишу соглашение о конфиденциальности до того, как вы покажете схему сети — доступ к инфраструктуре это доступ к бизнесу."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Работаете по договору? Какие документы?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, по договору оказания услуг. До начала работ — смета и согласованный объём, после — закрывающие документы для бухгалтерии."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "С какими системами вы работаете?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Linux и Windows Server, Active Directory, серверы 1С, виртуализация (Proxmox, VMware, Hyper-V), Docker, сети (MikroTik, pfSense, VLAN, VPN), веб-серверы и СУБД, облака (Yandex Cloud, Selectel), IP-телефония. За то, чего не знаю, не берусь — скажу сразу, а не буду учиться за ваш счёт."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как начать работу?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Заявка через форму, Telegram или телефон. Дальше короткий разговор: что за инфраструктура, что болит, какие сроки. При необходимости — аудит. Затем смета и план работ. Начинаю только после согласования."
+      }
+    }
+  ]
+}
+    </script>
+
     <!-- Шрифт Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,6 +198,7 @@
                     <li><a href="#process" data-ru="Как работаю" data-en="Process">Как работаю</a></li>
                     <li><a href="#benefits" data-ru="Преимущества" data-en="Benefits">Преимущества</a></li>
                     <li><a href="#pricing" data-ru="Цены" data-en="Pricing">Цены</a></li>
+                    <li><a href="#faq" data-ru="Вопросы" data-en="FAQ">Вопросы</a></li>
                     <li><a href="#contacts" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
                 </ul>
             </nav>
@@ -465,7 +555,114 @@
     </section>
 
     <!-- ============================================
-         8. КОНТАКТЫ + ФОРМА
+         8. FAQ
+    ============================================= -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title" data-ru="Частые вопросы" data-en="Frequently asked questions">Частые вопросы</h2>
+            <p class="section-subtitle"
+               data-ru="То, что обычно спрашивают до начала работы. Если чего-то не хватает — спросите, отвечу лично."
+               data-en="What companies usually ask before we start. If your question is not here, just ask.">
+                То, что обычно спрашивают до начала работы. Если чего-то не хватает — спросите, отвечу лично.
+            </p>
+
+            <div class="faq__list">
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        <span data-ru="Что входит в абонентское обслуживание?" data-en="What is included in the monthly retainer?">Что входит в абонентское обслуживание?</span>
+                        <span class="faq__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq__answer">
+                        <p data-ru="Обработка заявок пользователей, мониторинг серверов и сервисов, резервное копирование с проверкой восстановления, обновления и плановые работы, консультации и ведение документации — всё, что относится к текущей работе инфраструктуры. Проектные задачи (миграции, внедрения, настройка нового оборудования) считаются отдельно, со сметой до начала работ." data-en="User requests, server and service monitoring, backups with restore testing, updates and scheduled maintenance, consultations and documentation — everything related to day-to-day operation. Project work (migrations, rollouts, new hardware setup) is quoted separately before any work starts.">Обработка заявок пользователей, мониторинг серверов и сервисов, резервное копирование с проверкой восстановления, обновления и плановые работы, консультации и ведение документации — всё, что относится к текущей работе инфраструктуры. Проектные задачи (миграции, внедрения, настройка нового оборудования) считаются отдельно, со сметой до начала работ.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        <span data-ru="В какое время вы работаете?" data-en="What are your working hours?">В какое время вы работаете?</span>
+                        <span class="faq__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq__answer">
+                        <p data-ru="Стандартный рабочий день — понедельник–пятница, 8 часов. Я постоянно за компьютером и на телефоне: обычно отвечаю в течение 15 минут, гарантированный срок реакции по договору — один час. Если ситуация требует, остаюсь и после рабочего дня." data-en="Monday to Friday, standard eight-hour day. I am at the computer and reachable by phone: usually I reply within 15 minutes, and the contracted response time is one hour. If the situation requires it, I stay on after hours.">Стандартный рабочий день — понедельник–пятница, 8 часов. Я постоянно за компьютером и на телефоне: обычно отвечаю в течение 15 минут, гарантированный срок реакции по договору — один час. Если ситуация требует, остаюсь и после рабочего дня.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        <span data-ru="Как быстро вы реагируете на аварию?" data-en="How fast do you react to an incident?">Как быстро вы реагируете на аварию?</span>
+                        <span class="faq__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq__answer">
+                        <p data-ru="Реакция — в течение часа в рабочее время, обычно быстрее. Восстановление зависит от причины: типовые сбои закрываются за один-четыре часа, сложные — по плану, срок которого я называю в тот же день. Если причина на стороне провайдера, вендора или облака, я беру коммуникацию с ними на себя." data-en="Within an hour during working hours, usually faster. Recovery depends on the cause: typical failures are resolved in one to four hours, complex ones follow a plan with a timeline I give the same day. If the cause is on the provider, vendor or cloud side, I handle the communication with them.">Реакция — в течение часа в рабочее время, обычно быстрее. Восстановление зависит от причины: типовые сбои закрываются за один-четыре часа, сложные — по плану, срок которого я называю в тот же день. Если причина на стороне провайдера, вендора или облака, я беру коммуникацию с ними на себя.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        <span data-ru="А ночью и в выходные?" data-en="What about nights and weekends?">А ночью и в выходные?</span>
+                        <span class="faq__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq__answer">
+                        <p data-ru="Круглосуточного дежурства нет — и я не делаю вид, что есть. Для аварий, которые останавливают бизнес, мы до начала работ договариваемся о канале связи и порядке эскалации: кому звонить, при каких условиях и что считается критичным." data-en="There is no round-the-clock on-call duty, and I do not pretend otherwise. For outages that stop the business, we agree on an escalation channel beforehand: who to call, under what conditions, and what counts as critical.">Круглосуточного дежурства нет — и я не делаю вид, что есть. Для аварий, которые останавливают бизнес, мы до начала работ договариваемся о канале связи и порядке эскалации: кому звонить, при каких условиях и что считается критичным.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        <span data-ru="Вы работаете один? Что будет, если вы заболеете?" data-en="Do you work alone? What if you get sick?">Вы работаете один? Что будет, если вы заболеете?</span>
+                        <span class="faq__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq__answer">
+                        <p data-ru="Работу веду сам, без субподрядчиков. Для очных задач в Екатеринбурге есть напарник: он приедет на место и посмотрит глазами, если нужна физическая работа с оборудованием. О плановом отсутствии предупреждаю заранее, а документация и доступы всегда остаются у вас — при необходимости инфраструктуру поднимет другой специалист по моим записям." data-en="I do the work myself, without subcontractors. For on-site tasks in Yekaterinburg I have a partner who can go and look at the equipment in person. I give notice of planned absence in advance, and documentation plus access always stay with you — another specialist can pick the infrastructure up from my notes.">Работу веду сам, без субподрядчиков. Для очных задач в Екатеринбурге есть напарник: он приедет на место и посмотрит глазами, если нужна физическая работа с оборудованием. О плановом отсутствии предупреждаю заранее, а документация и доступы всегда остаются у вас — при необходимости инфраструктуру поднимет другой специалист по моим записям.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        <span data-ru="Как передаются доступы и пароли?" data-en="How are access and passwords handled?">Как передаются доступы и пароли?</span>
+                        <span class="faq__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq__answer">
+                        <p data-ru="Вы заводите для меня отдельные учётные записи, а не даёте свой личный пароль. Пароли храню в менеджере паролей, не в файле на рабочем столе. Владелец доступов — вы: мои учётки можно отозвать в любой момент, и это ничего не сломает, потому что инфраструктура не завязана на мои личные аккаунты." data-en="You create separate accounts for me instead of sharing your personal password. I keep credentials in a password manager, not in a file on the desktop. You own the access: my accounts can be revoked at any time without breaking anything, because the infrastructure is not tied to my personal logins.">Вы заводите для меня отдельные учётные записи, а не даёте свой личный пароль. Пароли храню в менеджере паролей, не в файле на рабочем столе. Владелец доступов — вы: мои учётки можно отозвать в любой момент, и это ничего не сломает, потому что инфраструктура не завязана на мои личные аккаунты.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        <span data-ru="Подпишете NDA?" data-en="Will you sign an NDA?">Подпишете NDA?</span>
+                        <span class="faq__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq__answer">
+                        <p data-ru="Да. Подпишу соглашение о конфиденциальности до того, как вы покажете схему сети — доступ к инфраструктуре это доступ к бизнесу." data-en="Yes. I will sign a confidentiality agreement before you show me the network diagram — access to infrastructure is access to the business.">Да. Подпишу соглашение о конфиденциальности до того, как вы покажете схему сети — доступ к инфраструктуре это доступ к бизнесу.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        <span data-ru="Работаете по договору? Какие документы?" data-en="Do you work under a contract? What paperwork do you provide?">Работаете по договору? Какие документы?</span>
+                        <span class="faq__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq__answer">
+                        <p data-ru="Да, по договору оказания услуг. До начала работ — смета и согласованный объём, после — закрывающие документы для бухгалтерии." data-en="Yes, under a service agreement. A quote and agreed scope before work starts, closing documents for your accounting afterwards.">Да, по договору оказания услуг. До начала работ — смета и согласованный объём, после — закрывающие документы для бухгалтерии.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        <span data-ru="С какими системами вы работаете?" data-en="Which systems do you work with?">С какими системами вы работаете?</span>
+                        <span class="faq__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq__answer">
+                        <p data-ru="Linux и Windows Server, Active Directory, серверы 1С, виртуализация (Proxmox, VMware, Hyper-V), Docker, сети (MikroTik, pfSense, VLAN, VPN), веб-серверы и СУБД, облака (Yandex Cloud, Selectel), IP-телефония. За то, чего не знаю, не берусь — скажу сразу, а не буду учиться за ваш счёт." data-en="Linux and Windows Server, Active Directory, 1C servers, virtualization (Proxmox, VMware, Hyper-V), Docker, networking (MikroTik, pfSense, VLAN, VPN), web servers and databases, cloud (Yandex Cloud, Selectel), IP telephony. I do not take on what I do not know — I will say so upfront instead of learning at your expense.">Linux и Windows Server, Active Directory, серверы 1С, виртуализация (Proxmox, VMware, Hyper-V), Docker, сети (MikroTik, pfSense, VLAN, VPN), веб-серверы и СУБД, облака (Yandex Cloud, Selectel), IP-телефония. За то, чего не знаю, не берусь — скажу сразу, а не буду учиться за ваш счёт.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">
+                        <span data-ru="Как начать работу?" data-en="How do we start?">Как начать работу?</span>
+                        <span class="faq__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq__answer">
+                        <p data-ru="Заявка через форму, Telegram или телефон. Дальше короткий разговор: что за инфраструктура, что болит, какие сроки. При необходимости — аудит. Затем смета и план работ. Начинаю только после согласования." data-en="Send a request via the form, Telegram or phone. Then a short call: what the infrastructure looks like, what hurts, what the deadlines are. An audit if needed. Then a quote and a plan. Work starts only after we agree.">Заявка через форму, Telegram или телефон. Дальше короткий разговор: что за инфраструктура, что болит, какие сроки. При необходимости — аудит. Затем смета и план работ. Начинаю только после согласования.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         9. КОНТАКТЫ + ФОРМА
     ============================================= -->
     <section class="contacts" id="contacts">
         <div class="container">

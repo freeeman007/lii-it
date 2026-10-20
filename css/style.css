@@ -1250,3 +1250,109 @@ html, body {
     margin-bottom: 32px;
     max-width: 520px;
 }
+
+/* ============================================================
+   16. FAQ
+   ============================================================ */
+
+.faq__list {
+    display: grid;
+    gap: 12px;
+    max-width: 900px;
+}
+
+.faq__item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color var(--transition), background var(--transition);
+}
+
+.faq__item:hover {
+    border-color: var(--accent);
+}
+
+.faq__item[open] {
+    border-color: var(--accent);
+    background: var(--card-hover);
+}
+
+.faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    list-style: none;
+}
+
+.faq__question::-webkit-details-marker {
+    display: none;
+}
+
+.faq__question:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+    border-radius: var(--radius);
+}
+
+.faq__icon {
+    position: relative;
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.faq__icon::before,
+.faq__icon::after {
+    content: '';
+    position: absolute;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.faq__icon::before {
+    left: 0;
+    top: 8px;
+    width: 18px;
+    height: 2px;
+}
+
+.faq__icon::after {
+    left: 8px;
+    top: 0;
+    width: 2px;
+    height: 18px;
+}
+
+.faq__item[open] .faq__icon::after {
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+.faq__answer {
+    padding: 0 24px 22px;
+}
+
+.faq__answer p {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 760px;
+}
+
+@media (max-width: 600px) {
+    .faq__question {
+        padding: 16px 18px;
+        font-size: 16px;
+    }
+
+    .faq__answer {
+        padding: 0 18px 18px;
+    }
+}
