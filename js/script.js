@@ -11,6 +11,45 @@
     'use strict';
 
     /* ============================================================
+       0. ЦЕЛИ АНАЛИТИКИ
+       Отправляем события в Яндекс.Метрику (reachGoal) и GA4 (event).
+       Имена целей: form_submit, phone_click, telegram_click, email_click.
+       Если счётчик не загрузился — молча выходим, ничего не ломаем.
+       ============================================================ */
+    const YM_COUNTER_ID = 113155355;
+
+    function trackGoal(name) {
+        try {
+            if (typeof window.ym === 'function') {
+                window.ym(YM_COUNTER_ID, 'reachGoal', name);
+            }
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', name);
+            }
+        } catch (e) {
+            /* аналитика не должна ломать страницу */
+        }
+    }
+
+    document.addEventListener('click', function (event) {
+        const target = event.target;
+        if (!target || typeof target.closest !== 'function') return;
+
+        const link = target.closest('a[href]');
+        if (!link) return;
+
+        const href = link.getAttribute('href') || '';
+        if (href.indexOf('tel:') === 0) {
+            trackGoal('phone_click');
+        } else if (href.indexOf('mailto:') === 0) {
+            trackGoal('email_click');
+        } else if (href.indexOf('https://t.me/') === 0) {
+            trackGoal('telegram_click');
+        }
+    });
+
+
+    /* ============================================================
        1. АККОРДЕОН УСЛУГ
        ============================================================ */
     const accordionItems = document.querySelectorAll('.accordion__item');
@@ -277,6 +316,7 @@
                 contactForm.reset();
                 formStatus.classList.add('contact-form__status--ok');
                 formStatus.textContent = text.ok;
+                trackGoal('form_submit');
             }).catch(function () {
                 formStatus.classList.add('contact-form__status--error');
                 formStatus.textContent = text.err;
